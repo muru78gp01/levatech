@@ -29,5 +29,8 @@
                 </div>
             @endforeach
         </div>
+        <div class='pagenate'> <!-- ページネーションのブロック -->
+            {{ $posts->links() }}
+        </div>
     </body>
 </html>
