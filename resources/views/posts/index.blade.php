@@ -24,7 +24,9 @@
         <div class='posts'> <!-- 'posts'ブロック -->
             @foreach ($posts as $post)
                 <div class='post'>
-                    <h2 class='title'>{{ $post->title }}</h2>
+                    <h2 class='title'>{{ $post->title }}
+                        <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                    </h2>
                     <p class='body'>{{ $post->body }}</p> <!-- 段落 -->
                 </div>
             @endforeach
