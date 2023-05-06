@@ -34,5 +34,8 @@
         <div class='pagenate'> <!-- ページネーションのブロック -->
             {{ $posts->links() }}
         </div>
+        <div class='create'> <!-- ブログ投稿作成画面リンクブロック -->
+            <a href='/posts/create'>create</a>
+        </div>
     </body>
 </html>

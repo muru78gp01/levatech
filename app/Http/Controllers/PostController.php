@@ -21,6 +21,11 @@ class PostController extends Controller
         //10件の件数制限をかけて取得するgetPagenateBylimit()を使い、インスタンス化した$postを代入。
     }
     
+    public function create()//ブログ投稿作成画面のviewを返却する関数。
+    {
+        return view('posts/create');
+    }
+    
     /**
      * 特定IDのpostを表示する
      * 
