@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    //fillが実行可能にするためのプロパティ設定
+    protected $fillable = [
+        'title',
+        'body',
+    ];
     use HasFactory;
     public function getByLimit(int $limit_count = 10)
     {
