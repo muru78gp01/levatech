@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 //use宣言は外部にあるクラスをPostController内にインポートできる。
 //この場合、App\Models内のPostクラスをインポートしている。
 use App\Models\Post;
+use App\Http\Requests\PostRequest;
 class PostController extends Controller
 {
     /**
@@ -26,7 +26,7 @@ class PostController extends Controller
         return view('posts/create');
     }
     
-    public function store(Request $request, Post $post)
+    public function store(PostRequest $request, Post $post) //RequestをPostRequestに変更
     /**Request $request
      * ユーザからのリクエストが含まれるデータを扱う場合、Requestインスタンスを利用する。
      * Post $post
