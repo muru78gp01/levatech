@@ -69,6 +69,15 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
     
+    /**ブログ投稿編集画面表示用のコントローラー
+     * URLから$idを受け取っているので、引数で該当IDのPostインスタンスが生成される。
+     * このPostインスタンスをViewに引き渡すことで、View側で対象データを参照できるようになる。
+     */
+    public function edit(Post $post)
+    {
+        return view('posts/edit')->with(['post' => $post]);
+    }
+    
     /**
      * 特定IDのpostを表示する
      * 
