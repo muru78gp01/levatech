@@ -23,3 +23,5 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit']);
 // ブログ投稿編集画面表示用のルーティング
 Route::put('/posts/{post}', [PostController::class, 'update']);
 // ブログ投稿編集実行用のルーティング
+Route::delete('/posts/{post}', [PostController::class, 'delete']);
+// ブログ投稿削除関連のルーティング
