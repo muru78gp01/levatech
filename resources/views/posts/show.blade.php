@@ -17,6 +17,8 @@
                 <p>{{ $post->body }}</p>
             </div>
         </div>
+        <div class="edit"><a href="/posts/{{ $post->id }}/edit">edit</a></div>
+        <!-- ブログ投稿編集画面表示用導線 -->
         <div class="footer">
             <a href="/">戻る</a>
         </div>
