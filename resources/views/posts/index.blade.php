@@ -21,10 +21,13 @@
     </head>
     <body> <!-- 文書の本体を記述する。 -->
         <h1>Blog Name</h1> <!-- Heading(見出し)。h1は一番大きな見出し -->
+        <div class='create'> <!-- ブログ投稿作成画面リンクブロック -->
+            <a href='/posts/create'>create</a>
+        </div>
         <div class='posts'> <!-- 'posts'ブロック -->
             @foreach ($posts as $post)
                 <div class='post'>
-                    <h2 class='title'>{{ $post->title }}
+                    <h2 class='title'>
                         <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                     </h2>
                     <p class='body'>{{ $post->body }}</p> <!-- 段落 -->
@@ -34,14 +37,13 @@
                         @method('DELETE')
                         <button type="button" onclick="deletePost({{ $post->id }})">delete</button>
                     </form>
+                    <!-- Postインスタンスのプロパティとしてカテゴリー名を参照 -->
+                    <div class="category"><a href="">{{ $post->category->name }}</a></div>
                 </div>
             @endforeach
         </div>
         <div class='pagenate'> <!-- ページネーションのブロック -->
             {{ $posts->links() }}
-        </div>
-        <div class='create'> <!-- ブログ投稿作成画面リンクブロック -->
-            <a href='/posts/create'>create</a>
         </div>
     <!-- 削除確認を行うためのダイアログを表示するJavaScript -->
     <script>
