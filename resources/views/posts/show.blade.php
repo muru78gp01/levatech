@@ -20,7 +20,7 @@
             </div>
         </div>
         <!-- Postインスタンスのプロパティとしてカテゴリー名を参照 -->
-        <div class="category"><a href="">{{ $post->category->name }}</a></div>
+        <div class="category"><a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></div>
         <div class="footer">
             <a href="/">戻る</a>
         </div>

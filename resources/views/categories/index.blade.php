@@ -39,6 +39,9 @@
                         @method('DELETE')
                         <button type="button" onclick="deletePost({{ $post->id }})">delete</button>
                     </form>
+                    <div class="footer">
+                        <a href="/">戻る</a>
+                    </div>
                 </div>
             @endforeach
         </div>

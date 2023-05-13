@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;    //外部にあるPostController
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,5 @@ Route::put('/posts/{post}', [PostController::class, 'update']);
 // ブログ投稿編集実行用のルーティング
 Route::delete('/posts/{post}', [PostController::class, 'delete']);
 // ブログ投稿削除関連のルーティング
+Route::get('/categories/{category}', [CategoryController::class, 'index']);
+// カテゴリーごとの投稿一覧ページ表示用のルーティング
