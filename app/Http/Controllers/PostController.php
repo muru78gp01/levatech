@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 //use宣言は外部にあるクラスをPostController内にインポートできる。
 //この場合、App\Models内のPostクラスをインポートしている。
 use App\Models\Post;
+use App\Models\Category;
 use App\Http\Requests\PostRequest;
 class PostController extends Controller
 {
@@ -21,9 +22,9 @@ class PostController extends Controller
         //10件の件数制限をかけて取得するgetPagenateBylimit()を使い、インスタンス化した$postを代入。
     }
     
-    public function create()//ブログ投稿作成画面のviewを返却する関数。
+    public function create(Category $category)//ブログ投稿作成画面のviewを返却する関数。
     {
-        return view('posts/create');
+        return view('posts/create')->with(['categories' => $category->get()]);
     }
     
     public function store(PostRequest $request, Post $post) //RequestをPostRequestに変更
