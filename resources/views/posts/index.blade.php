@@ -1,8 +1,14 @@
-<!DOCTYPE html> <!-- ドキュメントタイプ宣言。HTML文書ファイルの先頭記述し、そのHTMLバージョンを宣言する -->
-<html lang="{{ str_replace('_' , '-' , app()->getLocale()) }}"> 
+<!-- DOCTYPE html> <!-- ドキュメントタイプ宣言。HTML文書ファイルの先頭記述し、そのHTMLバージョンを宣言する -->
+<!-- <html lang="{{ str_replace('_' , '-' , app()->getLocale()) }}"> -->
 <!-- app()->getLocale()：ユーザーの言語環境を取得
      str_replace( $検索文字列 , $置換後文字列 , $検索対象文字列)：文字列を置換する
      ユーザーの言語環境によって文字変換されるコードという意味-->
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Index') }}
+        </h2>
+    </x-slot>
     <head>　<!-- この文書のヘッダ部を指定する。ヘッダ部には、この文書全体に関する指定などを書く。 -->
         <meta charset="utf-8"> 
         <!-- metaタグはヘッダ部に配置して、ページに関する様々な情報を記述する。
@@ -42,6 +48,9 @@
                 </div>
             @endforeach
         </div>
+        <div class='user'>
+            ログインユーザー:{{ Auth::user()->name }}
+        </div>
         <div class='pagenate'> <!-- ページネーションのブロック -->
             {{ $posts->links() }}
         </div>
@@ -56,4 +65,5 @@
         }
     </script>
     </body>
-</html>
+</x-app-layout>
+<!-- </html> -->
